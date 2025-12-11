@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    height: 100vh;
+    transition: background-color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents scrollbars when flowers fall */
+    font-family: sans-serif;
+}
+
+/* LIGHT MODE (With You) */
+body.light {
+    background-color: #ffe6f2; /* Soft pink/white */
+    color: #333;
+}
+
+/* DARK MODE (Without You) */
+body.dark {
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Button Styling */
+#withyou {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    z-index: 10; /* Keeps button on top of flowers */
+    background-color: #ff4081;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+#withyou:active {
+    transform: scale(0.95);
+}
+
+/* FLOWER STYLES */
+.flower {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear forwards;
+    pointer-events: none; /* Let clicks pass through flowers */
+}
+
+/* Falling Animation */
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
